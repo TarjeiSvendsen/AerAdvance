@@ -1,4 +1,7 @@
 using Aircraft.API.Data;
+using Aircraft.API.Repository;
+using Aircraft.API.Seeding;
+using Aircraft.API.Service;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 
@@ -24,6 +27,9 @@ builder.Services.AddDbContext<AircraftDbContext>((serviceProvider, options) =>
  var mongoClient = serviceProvider.GetRequiredService<IMongoClient>();
  options.UseMongoDB(mongoClient, "aircraft");
 });
+
+builder.Services.AddScoped<IAircraftTypeRepository, AircraftTypeRepository>();
+builder.Services.AddScoped<AircraftTypeService>();
 
 builder.Services.AddControllers();
 
