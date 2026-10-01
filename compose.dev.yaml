@@ -2,7 +2,6 @@
   # Dependencies
   mongodb-aircraft-api:
     image: mongodb/mongodb-atlas-local
-    hostname: mongodb
     environment:
       - MONGODB_INITDB_ROOT_USERNAME=${MONGODB_USER}
       - MONGODB_INITDB_ROOT_PASSWORD=${MONGODB_PASS}
