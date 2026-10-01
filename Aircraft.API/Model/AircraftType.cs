@@ -9,6 +9,10 @@ public class AircraftType
     public string Icao { get; set; } = string.Empty;
     
     public string? Iata { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
-    public string Manufacturer { get; set; } = string.Empty;
+    public string Model { get; init; } = string.Empty;
+    public string Description { get; init; } = string.Empty;
+    public string Manufacturer { get; init; } = string.Empty;
+
+    public string BodyType { get; init; } = string.Empty;
+
 }
