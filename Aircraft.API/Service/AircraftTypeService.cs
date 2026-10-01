@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using Aircraft.API.DTO;
 using Aircraft.API.Model;
 using Aircraft.API.Repository;
