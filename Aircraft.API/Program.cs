@@ -40,6 +40,12 @@ if (app.Environment.IsDevelopment())
 {
 }
 
+using var scope = app.Services.CreateScope();
+var typeService = scope.ServiceProvider.GetRequiredService<AircraftTypeService>();
+var typeSeeder = new AircraftTypeSeeder(typeService);
+
+await typeSeeder.ImportAll();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
