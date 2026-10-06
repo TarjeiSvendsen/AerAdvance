@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="mongo" uuid="b12c80c7-7c79-4db3-baf7-34f148277478">
+      <driver-ref>mongo.4</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
+      <jdbc-url>mongodb://admin:3WWrF7gSpW50WuXeNN1rZa@localhost:19000/?authSource=admin&amp;authMechanism=SCRAM-SHA-256&amp;tls=true</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="aspireResourceId" value="mongo-c354a001" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="cache" uuid="b9c726d4-e560-4531-9bf3-391e168c2148">
+      <driver-ref>redis</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>jdbc.RedisDriver</jdbc-driver>
+      <jdbc-url>jdbc:redis://9qasn143Npd0Px2QyXJvAx@localhost:44187?ssl=true&amp;verifyServerCertificate=false</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="aspireResourceId" value="cache-kqmdsfck" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
