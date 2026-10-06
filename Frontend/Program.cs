@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,21 +10,6 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSignalR();
 
-builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-    .AddKeycloakOpenIdConnect(
-        serviceName: "keycloak",
-        realm: "frontend",
-        options =>
-        {
-            options.ClientId = "StoreWeb";
-            options.ResponseType = OpenIdConnectResponseType.Code;
-            options.Scope.Add("store:all");
-            
-            if (builder.Environment.IsDevelopment())
-            {
-                options.RequireHttpsMetadata = false;
-            }
-        });
 
 var app = builder.Build();
 

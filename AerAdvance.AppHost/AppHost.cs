@@ -2,8 +2,6 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var rabbitmq = builder.AddRabbitMQ("messaging");
 
-var keycloak = builder.AddKeycloak("keycloak", 8069);
-
 var redisCache = builder.AddRedis("cache");
 
 var mongo = builder.AddMongoDB("mongo")
@@ -19,8 +17,6 @@ var aircraftApiService = builder.AddProject<Projects.Aircraft_API>("aircraft-api
 
 builder.AddProject<Projects.Frontend>("webfrontend")
     .WithExternalHttpEndpoints()
-    .WithReference(keycloak)
-    .WaitFor(keycloak)
     .WithReference(aircraftApiService)
     .WaitFor(aircraftApiService);
 
