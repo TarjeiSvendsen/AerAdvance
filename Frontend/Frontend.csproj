@@ -22,9 +22,5 @@
       <Folder Include="Models\" />
       <Folder Include="wwwroot\lib\" />
     </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Aspire.Keycloak.Authentication" Version="13.6.0-preview.1.26479.8" />
-    </ItemGroup>
-
+    
 </Project>
