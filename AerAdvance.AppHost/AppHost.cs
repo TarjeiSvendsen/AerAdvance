@@ -15,9 +15,18 @@ var aircraftApiService = builder.AddProject<Projects.Aircraft_API>("aircraft-api
     .WaitFor(mongodb)
     .WithReference(rabbitmq);
 
+var lobbyApiService = builder.AddProject<Projects.Lobby_API>("lobby-api")
+    .WithReference(redisCache)
+    .WaitFor(redisCache)
+    .WithReference(mongodb)
+    .WaitFor(mongodb)
+    .WithReference(rabbitmq);
+
 builder.AddProject<Projects.Frontend>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithReference(aircraftApiService)
-    .WaitFor(aircraftApiService);
+    .WaitFor(aircraftApiService)
+    .WithReference(lobbyApiService)
+    .WaitFor(lobbyApiService);;
 
 builder.Build().Run();

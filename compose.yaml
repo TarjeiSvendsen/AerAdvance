@@ -4,3 +4,9 @@
     build:
       context: .
       dockerfile: Frontend/Dockerfile
+  lobby.api:
+    image: lobby.api
+    build:
+      context: .
+      dockerfile: Lobby.API/Dockerfile
+
