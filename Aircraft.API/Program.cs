@@ -1,7 +1,16 @@
+
+
+using AerAdvance.AircraftApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+
+builder.AddRabbitMQClient(connectionName: "messaging");
+
+builder.Services.AddHostedService<AircraftProcessingWorker>();
+
 
 // Add services to the container.
 builder.Services.AddProblemDetails();

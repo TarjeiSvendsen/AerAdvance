@@ -1,3 +1,5 @@
+using AerAdvance.LobbyApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +7,9 @@ builder.AddServiceDefaults();
 
 builder.Services.AddProblemDetails();
 
+builder.AddRabbitMQClient(connectionName:"messaging");
+
+builder.Services.AddHostedService<AircraftCreationWorker>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

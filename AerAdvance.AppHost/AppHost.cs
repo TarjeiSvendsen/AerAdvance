@@ -8,25 +8,30 @@ var mongo = builder.AddMongoDB("mongo")
     .WithLifetime(ContainerLifetime.Persistent);
 var mongodb = mongo.AddDatabase("mongodb");
 
-var aircraftApiService = builder.AddProject<Projects.Aircraft_API>("aircraft-api")
-    .WithReference(redisCache)
-    .WaitFor(redisCache)
-    .WithReference(mongodb)
-    .WaitFor(mongodb)
-    .WithReference(rabbitmq);
 
 var lobbyApiService = builder.AddProject<Projects.Lobby_API>("lobby-api")
     .WithReference(redisCache)
     .WaitFor(redisCache)
     .WithReference(mongodb)
     .WaitFor(mongodb)
-    .WithReference(rabbitmq);
+    .WithReference(rabbitmq)
+    .WaitFor(rabbitmq);
+
+var aircraftApiService = builder.AddProject<Projects.Aircraft_API>("aircraft-api")
+    .WithReference(redisCache)
+    .WaitFor(redisCache)
+    .WithReference(mongodb)
+    .WaitFor(mongodb)
+    .WithReference(rabbitmq)
+    .WaitFor(rabbitmq);
+
+
 
 builder.AddProject<Projects.Frontend>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithReference(aircraftApiService)
     .WaitFor(aircraftApiService)
     .WithReference(lobbyApiService)
-    .WaitFor(lobbyApiService);;
+    .WaitFor(lobbyApiService);
 
 builder.Build().Run();
