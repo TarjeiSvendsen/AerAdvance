@@ -1,3 +1,4 @@
+using AerAdvance.LobbyApi.Repositories;
 using AerAdvance.LobbyApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,9 @@ builder.AddServiceDefaults();
 builder.Services.AddProblemDetails();
 
 builder.AddRabbitMQClient(connectionName:"messaging");
+
+builder.Services.AddScoped<ILobbyRepository, LobbyRepository>();
+builder.Services.AddScoped<LobbyService>();
 
 builder.Services.AddHostedService<AircraftCreationWorker>();
 
