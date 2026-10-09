@@ -12,12 +12,14 @@ public class LobbyCreationDto
     [JsonPropertyName("isPublic")] public bool IsPublic { get; set; } = false;
     
     [JsonPropertyName("starterAircraft")] 
-    public List<string> StarterAircraftTypes { get; set; } = new List<string>();
-
+    public List<string> StarterAircraftTypes { get; set; } = new ();
+    [JsonPropertyName("starterAircraftAmount")]
+    public int StarterAircraftAmount { get; set; } = 1;
+    
     [JsonPropertyName("startingMoney")] public long StartingMoney { get; set; } = 100_000_000;
 
     [JsonPropertyName("economyModifiers")]
-    public EconomyModifiersDto EconomyModifiers { get; set; } = new EconomyModifiersDto();
+    public EconomyModifiersDto EconomyModifiers { get; set; } = new ();
     
     public class EconomyModifiersDto
     {

@@ -10,6 +10,7 @@ public class Lobby
     public string? Description { get; set; } = string.Empty;
     public bool IsPublic { get; set; } = false;
     public List<string> StarterAircraftTypes { get; set; } = new();
+    public int StarterAircraftAmount { get; set; } = 1;
     public long StartingMoney { get; set; } = 100_000_000;
     public EconomyModifiers EconomyModifiers { get; set; } = new();
     public List<Guid> Airlines { get; set; } = new();
