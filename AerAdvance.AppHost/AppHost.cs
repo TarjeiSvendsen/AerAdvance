@@ -2,15 +2,20 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache");
 
-var apiService = builder.AddProject<Projects.AerAdvance_Aircraft_API>("apiservice")
+var aircraftApiService = builder.AddProject<Projects.AerAdvance_Aircraft_API>("aircraft-api")
     .WithHttpHealthCheck("/health");
+var financeApiService = builder.AddProject<Projects.AerAdvance_Finance_API>("finance-api")
+    .WithHttpHealthCheck("/health");
+
 
 builder.AddProject<Projects.AerAdvance_Web>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithHttpHealthCheck("/health")
     .WithReference(cache)
     .WaitFor(cache)
-    .WithReference(apiService)
-    .WaitFor(apiService);
+    .WithReference(aircraftApiService)
+    .WaitFor(aircraftApiService)
+    .WithReference(financeApiService)
+    .WaitFor(financeApiService);
 
 builder.Build().Run();
