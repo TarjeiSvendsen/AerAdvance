@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerAdvance.ServiceDefaults"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerAdvance.Aircraft.API", "AerAdvance.Aircraft.API\AerAdvance.Aircraft.API.csproj", "{C0B9DDCA-A675-42F7-9261-E96D1FFF8582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerAdvance.Web", "AerAdvance.Web\AerAdvance.Web.csproj", "{A3C201A3-6BB1-4C70-8A07-A5A043482863}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerAdvance.Finance.API", "AerAdvance.Finance.API\AerAdvance.Finance.API.csproj", "{2F80CDDC-017E-49D3-97D4-FF9FF04CD43C}"
 EndProject
 Global
@@ -28,10 +26,6 @@ Global
 		{C0B9DDCA-A675-42F7-9261-E96D1FFF8582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0B9DDCA-A675-42F7-9261-E96D1FFF8582}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0B9DDCA-A675-42F7-9261-E96D1FFF8582}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3C201A3-6BB1-4C70-8A07-A5A043482863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3C201A3-6BB1-4C70-8A07-A5A043482863}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3C201A3-6BB1-4C70-8A07-A5A043482863}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3C201A3-6BB1-4C70-8A07-A5A043482863}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F80CDDC-017E-49D3-97D4-FF9FF04CD43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F80CDDC-017E-49D3-97D4-FF9FF04CD43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F80CDDC-017E-49D3-97D4-FF9FF04CD43C}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -12,8 +12,6 @@
     <ItemGroup>
         <ProjectReference Include="..\AerAdvance.Aircraft.API\AerAdvance.Aircraft.API.csproj" />
         <ProjectReference Include="..\AerAdvance.Finance.API\AerAdvance.Finance.API.csproj" />
-
-        <ProjectReference Include="..\AerAdvance.Web\AerAdvance.Web.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
